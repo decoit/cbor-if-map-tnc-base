@@ -10,7 +10,7 @@ It features full IF-MAP 2.2 support as described in the following two documents 
 
 This library may be used on both server and client side as it features full support for serialization and deserialization of requests and responses.
 
-The library was developed during the [SIMU research](http://www.simu-project.de) project.
+The library was developed during the [SIMU research project](http://www.simu-project.de).
 
 ## Preparation
 The following requirements must be met to compile and use this library:
