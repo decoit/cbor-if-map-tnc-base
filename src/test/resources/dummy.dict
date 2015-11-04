@@ -1,0 +1,41 @@
+n'dummy-namespace'[unistr(dns)] {
+	t'dummy'[unistr(d)] {
+		a'ifmap-publisher-id'[unistr(pid)] {}
+		a'ifmap-timestamp'[unistr(ts)] {}
+		a'ifmap-timestamp-fraction'[unistr(tsf)] {}
+		a'ifmap-cardinality'[unistr(card)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'dummy-ext-identifier'[unistr(dei)] {
+		a'administrative-domain'[unistr(ad)] {}
+		a'dummy-attr'[unistr(da)] {}
+		a'dummy-enum-attr'[unistr(dea)] {
+			e'val-one'[unistr(v1)]
+			e'val-two'[unistr(v2)]
+		}
+		t'nested-se'[unistr(se)] {}
+		t'nested-enum-se'[unistr(ese)] {
+			e'val-one'[unistr(v1)]
+			e'val-two'[unistr(v2)]
+		}
+		t'nested-ce'[unistr(ce)] {
+			a'ce-attr'[unistr(cea)] {}
+			a'ce-enum-attr'[unistr(ceea)] {
+				e'val-one'[unistr(v1)]
+				e'val-two'[unistr(v2)]
+			}
+			t'ce-nested-se'[unistr(cese)] {}
+			t'ce-nested-enum-se'[unistr(ceese)] {
+				e'val-one'[unistr(v1)]
+				e'val-two'[unistr(v2)]
+			}
+		}
+		t'nested-enum-ce'[unistr(ece)] {
+			a'ece-attr'[unistr(ecea)] {}
+			e'val-one'[unistr(v1)]
+			e'val-two'[unistr(v2)]
+		}
+	}
+}

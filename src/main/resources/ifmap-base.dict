@@ -1,0 +1,503 @@
+n'http://www.trustedcomputinggroup.org/2010/IFMAP/2'[uint(0)] {
+	t'access-request'[uint(0)] {
+		a'name'[uint(0)] {}
+		a'administrative-domain'[uint(1)] {}
+	}
+	t'device'[uint(1)] {
+		t'name'[uint(0)] {}
+		t'aik-name'[uint(1)] {}
+	}
+	t'identity'[uint(2)] {
+		a'name'[uint(0)] {}
+		a'administrative-domain'[uint(1)] {}
+		a'type'[uint(2)] {
+			e'aik-name'[uint(0)]
+			e'distinguished-name'[uint(1)]
+			e'dns-name'[uint(2)]
+			e'email-address'[uint(3)]
+			e'kerberos-principal'[uint(4)]
+			e'username'[uint(5)]
+			e'sip-uri'[uint(6)]
+			e'tel-uri'[uint(7)]
+			e'hip-hit'[uint(8)]
+			e'other'[uint(9)]
+		}
+		a'other-type-definition'[uint(3)] {}
+	}
+	t'ip-address'[uint(3)] {
+		a'value'[uint(0)] {}
+		a'administrative-domain'[uint(1)] {}
+		a'type'[uint(2)] {
+			e'IPv4'[uint(0)]
+			e'IPv6'[uint(1)]
+		}
+	}
+	t'mac-address'[uint(4)] {
+		a'value'[uint(0)] {}
+		a'administrative-domain'[uint(1)] {}
+	}
+	t'publish'[uint(5)] {
+		a'session-id'[uint(0)] {}
+		a'validation'[uint(1)] {
+			e'None'[uint(0)]
+			e'BaseOnly'[uint(1)]
+			e'MetadataOnly'[uint(2)]
+			e'All'[uint(3)]
+		}
+		t'update'[uint(0)] {
+			a'lifetime'[uint(0)] {
+				e'session'[uint(0)]
+				e'forever'[uint(1)]
+			}
+			t'metadata'[uint(0)] {}
+		}
+		t'notify'[uint(1)] {
+			a'lifetime'[uint(0)] {
+				e'session'[uint(0)]
+				e'forever'[uint(1)]
+			}
+			t'metadata'[uint(0)] {}
+		}
+		t'delete'[uint(2)] {
+			a'filter'[uint(0)] {}
+		}
+	}
+	t'search'[uint(6)] {
+		a'session-id'[uint(0)] {}
+		a'validation'[uint(1)] {
+			e'None'[uint(0)]
+			e'BaseOnly'[uint(1)]
+			e'MetadataOnly'[uint(2)]
+			e'All'[uint(3)]
+		}
+		a'match-links'[uint(2)] {}
+		a'max-depth'[uint(3)] {}
+		a'max-size'[uint(4)] {}
+		a'result-filter'[uint(5)] {}
+		a'terminal-identifier-type'[uint(6)] {}
+	}
+	t'subscribe'[uint(7)] {
+		a'session-id'[uint(0)] {}
+		a'validation'[uint(1)] {
+			e'None'[uint(0)]
+			e'BaseOnly'[uint(1)]
+			e'MetadataOnly'[uint(2)]
+			e'All'[uint(3)]
+		}
+		t'update'[uint(0)] {
+			a'name'[uint(0)] {}
+			a'match-links'[uint(2)] {}
+			a'max-depth'[uint(3)] {}
+			a'max-size'[uint(4)] {}
+			a'result-filter'[uint(5)] {}
+			a'terminal-identifier-type'[uint(6)] {}
+		}
+		t'delete'[uint(1)] {
+			a'name'[uint(0)] {}
+		}
+	}
+	t'poll'[uint(8)] {
+		a'session-id'[uint(0)] {}
+		a'validation'[uint(1)] {
+			e'None'[uint(0)]
+			e'BaseOnly'[uint(1)]
+			e'MetadataOnly'[uint(2)]
+			e'All'[uint(3)]
+		}
+	}
+	t'purgePublisher'[uint(9)] {
+		a'session-id'[uint(0)] {}
+		a'ifmap-publisher-id'[uint(1)] {}
+	}
+	t'newSession'[uint(10)] {
+		a'max-poll-result-size'[uint(0)] {}
+	}
+	t'endSession'[uint(11)] {
+		a'session-id'[uint(0)] {}
+	}
+	t'renewSession'[uint(12)] {
+		a'session-id'[uint(0)] {}
+	}
+	t'response'[uint(13)] {
+		a'validation'[uint(0)] {
+			e'None'[uint(0)]
+			e'BaseOnly'[uint(1)]
+			e'MetadataOnly'[uint(2)]
+			e'All'[uint(3)]
+		}
+		t'errorResult'[uint(0)] {
+			a'errorCode'[uint(0)] {
+				e'AccessDenied'[uint(0)]
+				e'Failure'[uint(1)]
+				e'InvalidIdentifier'[uint(2)]
+				e'InvalidIdentifierType'[uint(3)]
+				e'IdentifierTooLong'[uint(4)]
+				e'InvalidMetadata'[uint(5)]
+				e'InvalidSchemaVersion'[uint(6)]
+				e'InvalidSessionID'[uint(7)]
+				e'MetadataTooLong'[uint(8)]
+				e'SearchResultsTooBig'[uint(9)]
+				e'PollResultsTooBig'[uint(10)]
+				e'SystemError'[uint(11)]
+			}
+			a'name'[uint(1)] {}
+			t'errorString'[uint(0)] {}
+		}
+		t'pollResult'[uint(1)] {
+			t'searchResult'[uint(0)] {
+				a'name'[uint(0)] {}
+				t'resultItem'[uint(0)] {
+					t'metadata'[uint(0)] {}
+				}
+			}
+			t'updateResult'[uint(1)] {
+				a'name'[uint(0)] {}
+				t'resultItem'[uint(0)] {
+					t'metadata'[uint(0)] {}
+				}
+			}
+			t'deleteResult'[uint(2)] {
+				a'name'[uint(0)] {}
+				t'resultItem'[uint(0)] {
+					t'metadata'[uint(0)] {}
+				}
+			}
+			t'notifyResult'[uint(3)] {
+				a'name'[uint(0)] {}
+				t'resultItem'[uint(0)] {
+					t'metadata'[uint(0)] {}
+				}
+			}
+			t'errorResult'[uint(4)] {
+				a'errorCode'[uint(0)] {
+					e'AccessDenied'[uint(0)]
+					e'Failure'[uint(1)]
+					e'InvalidIdentifier'[uint(2)]
+					e'InvalidIdentifierType'[uint(3)]
+					e'IdentifierTooLong'[uint(4)]
+					e'InvalidMetadata'[uint(5)]
+					e'InvalidSchemaVersion'[uint(6)]
+					e'InvalidSessionID'[uint(7)]
+					e'MetadataTooLong'[uint(8)]
+					e'SearchResultsTooBig'[uint(9)]
+					e'PollResultsTooBig'[uint(10)]
+					e'SystemError'[uint(11)]
+				}
+				a'name'[uint(1)] {}
+				t'errorString'[uint(0)] {}
+			}
+		}
+		t'searchResult'[uint(2)] {
+			a'name'[uint(0)] {}
+			t'resultItem'[uint(0)] {
+				t'metadata'[uint(0)] {}
+			}
+		}
+		t'subscribeReceived'[uint(3)] {}
+		t'publishReceived'[uint(4)] {}
+		t'purgePublisherReceived'[uint(5)] {}
+		t'newSessionResult'[uint(6)] {
+			a'session-id'[uint(0)] {}
+			a'ifmap-publisher-id'[uint(1)] {}
+			a'max-poll-result-size'[uint(2)] {}
+		}
+		t'renewSessionResult'[uint(7)] {}
+		t'endSessionResult'[uint(8)] {}
+	}
+}
+n'http://www.trustedcomputinggroup.org/2010/IFMAPMETADATA/2'[uint(1)] {
+	t'access-request-device'[uint(0)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'access-request-ip'[uint(1)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'access-request-mac'[uint(2)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'authenticated-as'[uint(3)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'authenticated-by'[uint(4)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'capability'[uint(5)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'name'[uint(0)] {}
+		t'administrative-domain'[uint(1)] {}
+	}
+	t'device-attribute'[uint(6)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'name'[uint(0)] {}
+	}
+	t'device-characteristic'[uint(7)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'manufacturer'[uint(0)] {}
+		t'model'[uint(1)] {}
+		t'os'[uint(2)] {}
+		t'os-version'[uint(3)] {}
+		t'device-type'[uint(4)] {}
+		t'discovered-time'[uint(5)] {}
+		t'discoverer-id'[uint(6)] {}
+		t'discovery-method'[uint(7)] {}
+	}
+	t'device-ip'[uint(8)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'discovered-by'[uint(9)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+	}
+	t'enforcement-report'[uint(10)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'enforcement-action'[uint(0)] {
+			e'block'[uint(0)]
+			e'quarantine'[uint(1)]
+			e'other'[uint(2)]
+		}
+		t'other-type-definition'[uint(1)] {}
+		t'enforcement-reason'[uint(2)] {}
+	}
+	t'event'[uint(11)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'name'[uint(0)] {}
+		t'discovered-time'[uint(1)] {}
+		t'discoverer-id'[uint(2)] {}
+		t'magnitude'[uint(3)] {}
+		t'confidence'[uint(4)] {}
+		t'significance'[uint(5)] {
+			e'critical'[uint(0)]
+			e'important'[uint(1)]
+			e'informational'[uint(2)]
+		}
+		t'type'[uint(6)] {
+			e'p2p'[uint(0)]
+			e'cve'[uint(1)]
+			e'botnet infection'[uint(2)]
+			e'worm infection'[uint(3)]
+			e'excessive flows'[uint(4)]
+			e'behvioral change'[uint(5)]
+			e'policy violation'[uint(6)]
+			e'other'[uint(7)]
+		}
+		t'other-type-definition'[uint(7)] {}
+		t'information'[uint(8)] {}
+		t'vulnerability-uri'[uint(9)] {}
+	}
+	t'ip-mac'[uint(12)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'start-time'[uint(0)] {}
+		t'end-time'[uint(1)] {}
+		t'dhcp-server'[uint(2)] {}
+	}
+	t'layer2-information'[uint(13)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'vlan'[uint(0)] {}
+		t'vlan-name'[uint(1)] {}
+		t'port'[uint(2)] {}
+		t'administrative-domain'[uint(3)] {}
+	}
+	t'location'[uint(14)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'location-information'[uint(0)] {
+			a'type'[uint(0)] {}
+			a'value'[uint(1)] {}
+		}
+		t'discovered-time'[uint(2)] {}
+		t'discoverer-id'[uint(3)] {}
+	}
+	t'request-for-investigation'[uint(15)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'qualifier'[uint(0)] {}
+	}
+	t'role'[uint(16)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'name'[uint(0)] {}
+		t'administrative-domain'[uint(1)] {}
+	}
+	t'unexpected-behavior'[uint(17)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'discovered-time'[uint(0)] {}
+		t'discoverer-id'[uint(1)] {}
+		t'information'[uint(2)] {}
+		t'magnitude'[uint(3)] {}
+		t'confidence'[uint(4)] {}
+		t'significance'[uint(5)] {
+			e'critical'[uint(0)]
+			e'important'[uint(1)]
+			e'informational'[uint(2)]
+		}
+		t'type'[uint(6)] {}
+	}
+	t'wlan-information'[uint(18)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'ssid'[uint(0)] {}
+		t'ssid-unicast-security'[uint(1)] {
+			a'other-type-definition'[uint(0)] {}
+			e'open'[uint(0)]
+			e'wep'[uint(1)]
+			e'tkip'[uint(2)]
+			e'ccmp'[uint(3)]
+			e'bip'[uint(4)]
+			e'other'[uint(5)]
+		}
+		t'ssid-group-security'[uint(2)] {
+			a'other-type-definition'[uint(0)] {}
+			e'open'[uint(0)]
+			e'wep'[uint(1)]
+			e'tkip'[uint(2)]
+			e'ccmp'[uint(3)]
+			e'bip'[uint(4)]
+			e'other'[uint(5)]
+		}
+		t'ssid-management-security'[uint(3)] {
+			a'other-type-definition'[uint(0)] {}
+			e'open'[uint(0)]
+			e'wep'[uint(1)]
+			e'tkip'[uint(2)]
+			e'ccmp'[uint(3)]
+			e'bip'[uint(4)]
+			e'other'[uint(5)]
+		}
+	}
+}
+n'http://www.trustedcomputinggroup.org/2012/IFMAPOPERATIONAL-METADATA/1'[uint(2)] {
+	t'client-time'[uint(0)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		a'current-time'[uint(4)] {}
+	}
+}
+n'http://www.trustedcomputinggroup.org/2013/IFMAP-SERVER/1'[uint(3)] {
+	t'ifmap-server'[uint(0)] {
+		a'administrative-domain'[uint(0)] {}
+	}
+	t'server-capability'[uint(1)] {
+		a'ifmap-publisher-id'[uint(0)] {}
+		a'ifmap-timestamp'[uint(1)] {}
+		a'ifmap-timestamp-fraction'[uint(2)] {}
+		a'ifmap-cardinality'[uint(3)] {
+			e'singleValue'[uint(0)]
+			e'multiValue'[uint(1)]
+		}
+		t'capability'[uint(0)] {}
+	}
+}
